@@ -14,6 +14,8 @@ private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.tag = "Hook";
+        
         rb =  this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
     }
