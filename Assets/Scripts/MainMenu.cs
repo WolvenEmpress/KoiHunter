@@ -27,12 +27,12 @@ public class MainMenu : MonoBehaviour
 
     public void OpenCredits()
     {
-
+       
     }
 
     public void CloseCredits()
     {
-
+        
     }
 
     public void QuitGame()
