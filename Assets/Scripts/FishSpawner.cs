@@ -7,10 +7,10 @@ public class FishSpawner : MonoBehaviour
     public GameObject[] enemiesToSpawn;
     void Update()
     {
-        if(Random.Range(1,100) <2)
+        if(Random.Range(1,100) <10)
         {
             Vector3 spawnPosition = this.transform.position;
-            spawnPosition.y += Random.Range(-15f,15f);
+            spawnPosition.y += Random.Range(-150f,150f);
 
             int randomEnemyPosition = Random.Range(0,8);
 
