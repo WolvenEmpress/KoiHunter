@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    public int score;
     public float speed;
     public int health; 
+
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 3f);
+        Destroy(this.gameObject, 6f);
     }
     public void OnTriggerEnter2D( Collider2D other )
     {
@@ -22,7 +24,8 @@ public class Fish : MonoBehaviour
         {
             health = health-1;
             if(health <= 0 ){
-        Destroy(this.gameObject);
+                Scoring.Instance.score += score;
+                Destroy(this.gameObject);
         
             }
         }    
@@ -30,8 +33,9 @@ public class Fish : MonoBehaviour
         
 
     }
+   
 
-    
+
     // Update is called once per frame
     void Update()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HookMovement : MonoBehaviour
 {
 public Transform groundCheck;
+    public float sinkspeed;
 public LayerMask groundLayer;
 public float jumpForce;
 public float speed;
@@ -17,6 +18,7 @@ private Animator animator;
         gameObject.tag = "Hook";
         
         rb =  this.GetComponent<Rigidbody2D>();
+        rb.AddForce(new Vector2(0f, sinkspeed));
         animator = this.GetComponent<Animator>();
     }
 
