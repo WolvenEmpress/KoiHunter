@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
 
     public string Gamescene;
+    public string Credits;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,12 @@ public class MainMenu : MonoBehaviour
 
     public void OpenCredits()
     {
-       
+        SceneManager.LoadScene(Credits);
     }
 
     public void CloseCredits()
     {
-        
+        SceneManager.LoadScene(Gamescene);
     }
 
     public void QuitGame()
