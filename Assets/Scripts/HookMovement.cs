@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class HookMovement : MonoBehaviour
 {
-public Transform groundCheck;
+    public Transform groundCheck;
     public float sinkspeed;
-public LayerMask groundLayer;
-public float jumpForce;
-public float speed;
-private Rigidbody2D rb;
-private Animator animator;
-    
+    public LayerMask groundLayer;
+    public float jumpForce;
+    public float speed;
+    private Rigidbody2D rb;
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.tag = "Hook";
-        
-        rb =  this.GetComponent<Rigidbody2D>();
+
+        rb = this.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(0f, sinkspeed));
         animator = this.GetComponent<Animator>();
+        Invoke("ChangeDirection", 20);
+    }
+  
+    public void ChangeDirection()
+    {
+        rb.AddForce(new Vector2(0f, 130));
     }
 
     // Update is called once per frame
@@ -30,19 +36,25 @@ private Animator animator;
 
 
         Vector2 movementVector = new Vector2();
-        
-        movementVector.x = Input.GetAxis ("Horizontal") * speed;
+
+        movementVector.x = Input.GetAxis("Horizontal") * speed;
 
         //if(Input.GetButtonDown("Jump") && grounded)
         //{
         //    movementVector.y = jumpForce;
         //}
 
-       
+
 
         //tell animator about relevant information
         //animator.SetFloat("speed", Mathf.Abs(rb.velocity.x));
 
-        rb.AddForce(movementVector);
+
+       
+
+
+            rb.AddForce(movementVector);
+        }
     }
-}
+
+
