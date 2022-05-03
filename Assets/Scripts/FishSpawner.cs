@@ -12,7 +12,7 @@ public class FishSpawner : MonoBehaviour
             Vector3 spawnPosition = this.transform.position;
             spawnPosition.y += Random.Range(-150f,150f);
 
-            int randomEnemyPosition = Random.Range(0,8);
+            int randomEnemyPosition = Random.Range(0,9);
 
             Instantiate(enemiesToSpawn[randomEnemyPosition], spawnPosition, Quaternion.identity);
 
